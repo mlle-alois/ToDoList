@@ -1,3 +1,4 @@
+
 import {ToDoListModel, UserModel} from "../../../models";
 import {UserServiceImpl} from "../user-service-impl";
 
@@ -79,7 +80,6 @@ describe('User test', () => {
             user.birthdate = validBirthDate13yo;
             expect(userService.isValid(user)).toEqual(false);
         })
-
-
-    })
-})
+      
+     })
+})     

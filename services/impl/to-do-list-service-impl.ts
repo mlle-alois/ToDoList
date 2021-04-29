@@ -13,7 +13,7 @@ export class ToDoListServiceImpl implements ToDoListService {
 
     add(item: ItemModel, toDoList: ToDoListModel): boolean {
         if(toDoList.list.length >= 10 || !this.waitingTimeIsOver(toDoList) ||
-            (item.name === null || item.content === null) || this.nameAlreadyExist(item, toDoList) ||
+            (item.name === "" || item.content === "") || this.nameAlreadyExist(item, toDoList) ||
             item.content.length > 1000)
             return false;
 
@@ -32,7 +32,7 @@ export class ToDoListServiceImpl implements ToDoListService {
 
     nameAlreadyExist(item: ItemModel, toDoList: ToDoListModel): boolean {
         const nameAlreadyExist = toDoList.list.find(element => element.name === item.name);
-        return nameAlreadyExist === undefined;
+        return nameAlreadyExist !== undefined;
     }
 
 }
