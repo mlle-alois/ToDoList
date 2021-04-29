@@ -4,7 +4,7 @@
  */
 module.exports = {
   "roots": [
-    "C:\\Users\\chtitski\\Documents\\GitHubYo\\ToDoList"
+    ""
   ],
   "testMatch": [
     "**/__tests__/**/*.+(ts|tsx|js)",
