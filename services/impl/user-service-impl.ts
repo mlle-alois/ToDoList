@@ -16,7 +16,6 @@ export class UserServiceImpl implements userService{
         if(user.password.length < 8 || user.password.length > 40)
             return false;
 
-        console.log(moment().diff(user.birthdate, 'years'))
         return !(user.birthdate == null || moment().diff(user.birthdate, 'years') < 13);
     }
 }

@@ -7,7 +7,7 @@ interface ToDoListModelProps {
 export class ToDoListModel implements ToDoListModelProps {
     list: ItemModel[];
 
-    constructor(properties: ToDoListModelProps) {
-        this.list = properties.list;
+    constructor() {
+        this.list = [];
     }
 }
