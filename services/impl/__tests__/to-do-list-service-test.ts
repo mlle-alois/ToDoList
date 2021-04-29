@@ -45,6 +45,22 @@ describe('ToDoListService test', () => {
             });
             expect(toDoListService.add(item, todoList)).toEqual(false);
         });
+        it('Should return false with name is empty', () => {
+            const todoList = new ToDoListModel();
+            const item = new ItemModel({
+                name: "",
+                content: "Tu dois faire ça"
+            });
+            expect(toDoListService.add(item, todoList)).toEqual(false);
+        });
+        it('Should return false with content is empty', () => {
+            const todoList = new ToDoListModel();
+            const item = new ItemModel({
+                name: "Item 1",
+                content: ""
+            });
+            expect(toDoListService.add(item, todoList)).toEqual(false);
+        });
         it('Should return false with length content over 1000', () => {
 
             const todoList = new ToDoListModel();
@@ -75,7 +91,7 @@ describe('ToDoListService test', () => {
                 name: "Devoirs",
                 content: ""
             });
-            expect(toDoListService.add(item, todoList)).toEqual(true);
+            expect(toDoListService.add(item, todoList)).toEqual(false);
         });
         it('Should return true with not empty list', () => {
             const todoList = new ToDoListModel();
@@ -88,7 +104,7 @@ describe('ToDoListService test', () => {
                 content: "Tu dois faire ça",
                 dateHourAdd: new Date(2000, 8, 14)
             });
-            expect(toDoListService.add(item, todoList)).toEqual(true);
+            expect(toDoListService.add(item, todoList)).toEqual(false);
         });
     });
 

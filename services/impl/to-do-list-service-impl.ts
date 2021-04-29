@@ -13,7 +13,8 @@ export class ToDoListServiceImpl implements ToDoListService {
 
     add(item: ItemModel, toDoList: ToDoListModel): boolean {
         if(toDoList.list.length >= 10 || !this.waitingTimeIsOver(toDoList) ||
-            this.nameAlreadyExist(item, toDoList) || item.content.length > 1000)
+            (item.name === "" || item.content === "") || this.nameAlreadyExist(item, toDoList) ||
+            item.content.length > 1000)
             return false;
 
         item.dateHourAdd = new Date();
