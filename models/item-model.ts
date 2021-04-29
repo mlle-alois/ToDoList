@@ -1,12 +1,12 @@
 interface ItemModelProps {
     name: string;
     content: string;
-    dateHourAdd: Date;
+    dateHourAdd?: Date;
 }
 
 export class ItemModel implements ItemModelProps{
     content: string;
-    dateHourAdd: Date;
+    dateHourAdd?: Date;
     name: string;
 
     constructor(properties: ItemModelProps) {
