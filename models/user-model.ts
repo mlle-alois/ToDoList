@@ -1,5 +1,4 @@
 import {ToDoListModel} from "./to-do-list-model";
-import moment from "moment";
 
 interface UserModelProps {
     name: string;
