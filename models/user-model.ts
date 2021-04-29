@@ -27,20 +27,5 @@ export class UserModel implements UserModelProps {
         this.toDoList = properties.toDoList;
     }
 
-    isValid(): boolean {
-        if (!this.email.match(/[a-z0-9_\-\.]+@[a-z0-9_\-\.]+\.[a-z]+/i))
-            return false;
 
-        if(this.name == null)
-            return false;
-
-        if(this.firstname == null)
-            return false;
-
-        if(this.password.length < 8 || this.password.length > 40)
-            return false;
-
-        console.log(moment().diff(this.birthdate, 'years'))
-        return !(this.birthdate == null || moment().diff(this.birthdate, 'years') < 13);
-    }
 }
