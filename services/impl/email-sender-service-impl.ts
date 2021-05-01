@@ -7,3 +7,5 @@ export class EmailSenderServiceImpl implements EmailSenderService {
         return true;
     }
 }
+
+export default EmailSenderServiceImpl;
